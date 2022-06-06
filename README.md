@@ -70,4 +70,4 @@ Examples!  http://www2.cs.tum.edu/projects/cup/examples.php
 
 **Source code**
 
-Get the source code: (https://versioncontrolseidl.in.tum.de/parsergenerators/cup) :+1:
+:+1: Get the source code: (https://versioncontrolseidl.in.tum.de/parsergenerators/cup)
