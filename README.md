@@ -4,18 +4,18 @@ CUP 0.11b
 
 (http://www2.cs.tum.edu/projects/cup/)
 
-CUP stands for Construction of Useful Parsers and is an LALR parser generator for Java. It was developed by C. Scott Ananian, Frank Flannery, Dan Wang, Andrew W. Appel and Michael Petter. It implements standard LALR(1) parser generation. As a parser author, you specify the symbols of Your grammar (terminal T1,T2; non terminal N1, N2;), as well as the productions (LHS :== RHS1 | RHS2 ;). If you provide each production alternative with action code ({: RESULT = myfunction(); :}), the parser will call this action code after performing a reduction with the particular production. You can use these callbacks to assemble an AST (Abstract Syntax Tree) or for arbitrary purposes. You should also have a look at the scanner generator JFlex, which is suited particularly well for collaboration with CUP.
+CUP stands for Construction of Useful Parsers and is an LALR parser generator for Java. It was developed by C. Scott Ananian, Frank Flannery, Dan Wang, Andrew W. Appel and Michael Petter. It implements standard LALR(1) parser generation. As a parser author, you specify the symbols of Your grammar `(terminal T1,T2; non terminal N1, N2;)`, as well as the productions `(LHS :== RHS1 | RHS2 ;)`. If you provide each production alternative with action code `({: RESULT = myfunction(); :})`, the parser will call this action code after performing a reduction with the particular production. You can use these callbacks to assemble an AST (Abstract Syntax Tree) or for arbitrary purposes. You should also have a look at the scanner generator JFlex, which is suited particularly well for collaboration with CUP.
 
  Main features
 
  LALR(1) parsing engine with symbol precedences
- Error recovery
- Syntax completion prerequisites
- Optional automatic parse tree generation
- Optional XML output
- Manual action code
- Grammar Engineering via Eclipse Plugin
- An open licence
+   Error recovery
+   Syntax completion prerequisites
+   Optional automatic parse tree generation
+   Optional XML output
+   Manual action code
+   Grammar Engineering via Eclipse Plugin
+   An open licence
 
 Download
 
@@ -29,7 +29,7 @@ How do I program CUP?
 
 CUP generates parsers from specifications, that you provide in a special file, whose syntax is quite similar to YACC:
 
-/* Simple +/-/* expression language; parser evaluates constant expressions on the fly*/
+`/* Simple +/-/* expression language; parser evaluates constant expressions on the fly*/
 import java_cup.runtime.*;
 
 parser code {:
@@ -66,8 +66,9 @@ expr      ::= expr:e1 PLUS  expr:e2         {: RESULT = e1+e2;       :}
   	     %prec UMINUS
        | LPAREN expr:e RPAREN	         {: RESULT = e;           :}
        | NUMBER:n	                     {: RESULT = n;           :}
-             ;
-This will produce two files, parser.java and sym.java, which can be included in arbitrary Java projects.
+             ;`
+
+This will produce two files, `parser.java` and `sym.java`, which can be included in arbitrary Java projects.
 
 Seriously, I still have a lot of questions
 
@@ -84,6 +85,7 @@ Older versions
 
 CUP is now nearly 20 years old now, and a lot of versions have been out there since then. You can find the old versions here:
  Browse old versions
+
 Source code
 
-Get the source code: svn checkout https://www2.in.tum.de/repos/cup/develop
+Get the source code: (https://versioncontrolseidl.in.tum.de/parsergenerators/cup)
